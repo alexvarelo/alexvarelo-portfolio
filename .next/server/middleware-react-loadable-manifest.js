@@ -1,0 +1,1 @@
+self.__REACT_LOADABLE_MANIFEST={"index.js -> react-svg-worldmap":{"id":"index.js -> react-svg-worldmap","files":["static/chunks/node_modules_react-svg-worldmap_dist_index_js.js"]}}
