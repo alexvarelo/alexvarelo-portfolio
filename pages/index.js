@@ -1,56 +1,63 @@
-import { Button, Container, Box, Heading, Image, useColorModeValue, Link, SimpleGrid, List, ListItem, Icon } from "@chakra-ui/react"
-import NextLink from 'next/link'
+import { Button, Container, Box, Heading, Image, useColorModeValue, Link, List, ListItem, Icon } from "@chakra-ui/react"
 import Section from '../components/section.js'
 import Paragraph from "../components/paragraph.js"
 import Layout from '../components/layouts/article'
-import { ChevronRightIcon } from "@chakra-ui/icons"
 import { BioSection, BioYear } from "../components/bio.js"
-import { GridItem } from '../components/grid-item'
 import {
     IoLogoTwitter,
     IoLogoInstagram,
     IoLogoGithub,
-    IoLogoDiscord
 } from 'react-icons/io5'
 import dynamic from "next/dynamic"
+import GradientText from "../components/gradient.js"
 import styled from '@emotion/styled'
-
 
 const WorldMap = dynamic(import('react-svg-worldmap'), { ssr: false })
 
 const data = [
-    { country: "cn", value: "1929292" }
+    { country: "es", value: "He vivido" },
+    { country: "it", value: "a" },
+    { country: "be", value: "aa" },
+    { country: "cz", value: "a" },
+    { country: "po", value: "a" },
+    { country: "ch", value: "a" },
+    { country: "hu", value: "a" },
+    { country: "fr", value: "a" },
+    { country: "gb", value: "a" },
 ]
 
-const GradientText = styled.span`
-font-size: 20px;
-font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-font-weight: 700;
-background: linear-gradient(to right, rgb(0,210,255), rgb(58,123, 213));
--webkit-text-fill-color: transparent;
--webkit-background-clip: text;
+
+const LogoBox = styled.span`
+  font-size: 35px;
+  display: inline-flex;
+  transition: 300ms ease;
+  &:hover {
+    transform: rotate(15deg);
+  }
 `
+
 
 const Page = () => {
     return (
         <Layout>
             <Container maxW="750px">
-                <Box borderRadius="lg" bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')} p={3} mb={6} align="center">
-                    Hi 👋🏼, I&apos;m a <GradientText>full-stack developer </GradientText> based in Spain!
+                <Box borderRadius="lg" bg={useColorModeValue('#F9F9F9', 'whiteAlpha.200')} p={1} mb={6} align="center">
+                    {/*  Hi 👋🏼, I&apos;m a <GradientText>full-stack developer </GradientText> based in Spain! */}
+                    <Image
+                        src="/logos/prueba.png"
+                        alt="companies" />
                 </Box>
                 <Box display={{ md: "flex" }}>
                     <Box flexGrow={1}>
                         <Heading as="h2" variant="page-title">
-                            Alejandro Varela
+                            Welcome <LogoBox>👋🏼</LogoBox> <br /> I&apos;m Alejandro Varela!
                         </Heading>
                         <p><GradientText>Software developer</GradientText> (Front end / Data Scientist / Photographer)</p>
                     </Box>
-                    <Box flexShrink={0} mt={{ base: 4, md: 0 }} ml={{ md: 6 }} align="center">
+                    <Box flexShrink={0} mt={{ base: 4, md: 0 }} ml={{ md: 6 }} mr={1} align="center">
                         <Image
-                            borderColor="whiteAlpha.800"
-                            borderWidth={2}
                             borderStyle="solid"
-                            maxWidth="100px"
+                            maxWidth="120px"
                             display="inline-block"
                             borderRadius="full"
                             src="/images/alex.jpg"
@@ -59,26 +66,24 @@ const Page = () => {
                 </Box>
 
                 <Section delay={0.1}>
-                    <Heading as="h3" variant="section-title">
-                        Work
-                    </Heading>
-                    <Paragraph>Data Scientist who has open his barriers of knowledge to the field of front.
-                        Currently I&apos;m performing in a front-end project learning important skills,
-                        while strengthen and expanding my knowledge in machine learning by realizing the
-                        professional machine learning course of Google, using Google Cloud Platform.</Paragraph>
-                    <NextLink href="/works/inkdrop"><Link>Inkdrop</Link></NextLink>
-                    <Box align="center" my={4}>
-                        <NextLink href="/works">
-                            <Button rightIcon={<ChevronRightIcon></ChevronRightIcon>} colorScheme="teal">My portofolio</Button>
-                        </NextLink>
+                    <Box mr={3} mt={7}>
+                        <Paragraph>Data Scientist who has open his barriers of knowledge to the field of front.
+                            Currently I&apos;m performing in a front-end project learning important skills,
+                            while strengthen and expanding my knowledge in machine learning by realizing the
+                            professional machine learning course of Google, using Google Cloud Platform.</Paragraph>
                     </Box>
+                    {/* <Box align="center" my={4}>
+                        <NextLink href="/works">
+                            <Button rightIcon={<ChevronRightIcon></ChevronRightIcon>} colorScheme="cyan">My portofolio</Button>
+                        </NextLink>
+                    </Box> */}
                 </Section>
 
                 <Section delay={0.2}>
-                    <Heading as="h3" variant="section-title">Bio</Heading>
+                    <Heading mt={12} as="h3" variant="section-title">Biography 📅</Heading>
                     <BioSection>
-                        <BioYear>1998</BioYear>
-                        Born in Galicia, Spain
+                        <BioYear>2016</BioYear>
+                        Finished my school and decided that I wanted to dedicate myself in the world of IT.
                     </BioSection>
                     <BioSection>
                         <BioYear>
@@ -106,42 +111,53 @@ const Page = () => {
                     </BioSection>
                 </Section>
 
-                <Section delay={0.3}>
-                    <Heading as="h3" variant="section-title">I ♡</Heading>
+                {/* <Section delay={0.3}>
+                    <Heading mt={12} as="h3" variant="section-title">I ♡</Heading>
                     <Paragraph>
                         <Link href="/photography">Photography</Link>
                         , Music, Playing guitar, sport, organization, family, Padel
                     </Paragraph>
-                </Section>
+                </Section> */}
 
                 <Section delay={0.3}>
-                    <Heading as="h3" variant="section-title">
-                        Social media
+                    <Heading mt={12} as="h3" variant="section-title">
+                        Social media #️⃣
                     </Heading>
                     <List>
                         <ListItem>
-                            <Link href="" target="_blank"></Link>
+                            <Link href="https://github.com/alexvarelo" target="_blank"></Link>
                             <Button variant="ghost" colorScheme="gray" leftIcon={<Icon as={IoLogoGithub} />}>@alexvarelo</Button>
                         </ListItem>
                     </List>
                     <List>
                         <ListItem>
-                            <Link href="" target="_blank"></Link>
-                            <Button variant="ghost" colorScheme="purple" leftIcon={<Icon as={IoLogoInstagram} />}>@alexvarelo</Button>
+                            <Link href="https://www.instagram.com/alexvarelo.raw/" target="_blank"></Link>
+                            <Button variant="ghost" colorScheme="purple" leftIcon={<Icon as={IoLogoInstagram} />}>@alexvarelo.raw</Button>
                         </ListItem>
                     </List>
                     <List>
                         <ListItem>
-                            <Link href="" target="_blank"></Link>
+                            <Link href="https://twitter.com/Alexvarelo" target="_blank"></Link>
                             <Button variant="ghost" colorScheme="cyan" leftIcon={<Icon as={IoLogoTwitter} />}>@alexvarelo</Button>
                         </ListItem>
                     </List>
                 </Section>
                 <Section delay={0.3}>
-                    <Heading as="h3" variant="section-title">
-                        Places of Alex
+                    <Heading mt={12} as="h3" variant="section-title">
+                        Places of Alex 🌍
                     </Heading>
-                    <WorldMap color="blue" valueSuffix="people" size="lg" data={data} />
+                    <WorldMap
+                        fill="gray"
+                        fillOpacity="1"
+                        color='#88ccca'
+                        strokeOpacity="0.1"
+                        tooltipTextColor={useColorModeValue('white', 'black')}
+                        tooltipBgColor={useColorModeValue('black', 'white')}
+                        valueSuffix="people"
+                        size="xl"
+                        data={data}
+                        borderColor={useColorModeValue('black', 'white')}
+                        backgroundColor={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')} />
                 </Section>
             </Container>
         </Layout>

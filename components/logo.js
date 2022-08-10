@@ -5,17 +5,19 @@ import styled from '@emotion/styled'
 
 
 const LogoBox = styled.span`
-    font-weight: bold;
-    font-size: 18px;
-    display: inline-flex;
-    align-items:center;
-    height:30px;
-    line-height:20px;
-    padding:10px;
-
-    &:hover img {
-        transform: rotate(45deg);
-    }
+  font-weight: bold;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  height: 30px;
+  line-height: 20px;
+  padding: 10px;
+  img {
+    transition: 2000ms ease;
+  }
+  &:hover img {
+    transform: rotate(300deg);
+  }
 `
 
 const Logo = () => {
@@ -24,15 +26,14 @@ const Logo = () => {
     return (
         <Link href="/">
             <a>
-                <LogoBox>
-                    <Image src={sunFlowerImg} width={22} height={22} alt="logo"></Image>
+                <LogoBox mb={1}>
+                    <Image src={sunFlowerImg} width={24} height={24} alt="logo"></Image>
                     <Text
                         color={useColorModeValue('gray.800', 'whiteAlpha.900')}
-                        fontFamily='M PLUS Rounded 1c'
+                        fontFamily="'Trebuchet MS', sans-serif"
                         fontWeight="bold"
-                        ml={3}
-                    >
-                        Alejandro Varela
+                        ml={3} >
+                        Alexvarelo
                     </Text>
                 </LogoBox>
             </a>

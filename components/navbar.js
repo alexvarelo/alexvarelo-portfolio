@@ -12,8 +12,7 @@ import {
     MenuList,
     MenuButton,
     IconButton,
-    useColorModeValue,
-    Image
+    useColorModeValue
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button.js'
@@ -36,8 +35,6 @@ const LinkItem = ({ href, path, children }) => {
 
 const NavBar = props => {
     const { path } = props;
-    console.log(props);
-    console.log({ ...props });
 
     return (
         <Box
@@ -46,7 +43,7 @@ const NavBar = props => {
             w="100%"
             bg={useColorModeValue('#ffffff40', '#20202380')}
             style={{ backdropFilter: 'blur(10px' }}
-            zIndex={1}
+            zIndex={2}
             {...props}>
             <Container display='flex'
                 p={2} maxW="container.md"
@@ -69,36 +66,33 @@ const NavBar = props => {
                 >
                     <LinkItem href="/works" path={path}>Works</LinkItem>
                     <LinkItem href="/posts" path={path}>Posts</LinkItem>
+                    <LinkItem href="/atomic" path={path}>Atomic</LinkItem>
                 </Stack>
                 <Box flex={1} align="right">
                     <ThemeToggleButton />
-                    <Box ml={2} display={{ base: 'inline-block', md: "none" }}> </Box>
-                    <Menu>
-                        <MenuButton
-                            as={IconButton}
-                            icon={<HamburgerIcon></HamburgerIcon>}
-                            variant="outline"
-                            aria-label="Options" />
-                        <MenuList>
-                            <NextLink href="/" passHref>
-                                <MenuItem as={Link}>
-                                    <Image
-                                        boxSize='2rem'
-                                        borderRadius='full'
-                                        src='https://placekitten.com/100/100'
-                                        alt='Fluffybuns the destroyer'
-                                        mr='12px'
-                                    />
-                                    About</MenuItem>
-                            </NextLink>
-                            <NextLink href="/works" passHref>
-                                <MenuItem as={Link}>Works</MenuItem>
-                            </NextLink>
-                            <NextLink href="/posts" passHref>
-                                <MenuItem as={Link}>Posts</MenuItem>
-                            </NextLink>
-                        </MenuList>
-                    </Menu>
+                    <Box ml={2} display={{ base: 'inline-block', md: "none" }}>
+                        <Menu isLazy id="navbar-menu">
+                            <MenuButton
+                                as={IconButton}
+                                icon={<HamburgerIcon></HamburgerIcon>}
+                                variant="outline"
+                                aria-label="Options" />
+                            <MenuList>
+                                <NextLink href="/" passHref>
+                                    <MenuItem as={Link}>About</MenuItem>
+                                </NextLink>
+                                <NextLink href="/works" passHref>
+                                    <MenuItem as={Link}>Works</MenuItem>
+                                </NextLink>
+                                <NextLink href="/posts" passHref>
+                                    <MenuItem as={Link}>Posts</MenuItem>
+                                </NextLink>
+                                <NextLink href="/atomic" passHref>
+                                    <MenuItem as={Link}>Atomic</MenuItem>
+                                </NextLink>
+                            </MenuList>
+                        </Menu>
+                    </Box>
                 </Box>
             </Container>
         </Box>
