@@ -125,20 +125,23 @@ const Page = () => {
                     </Heading>
                     <List>
                         <ListItem>
-                            <Link href="https://github.com/alexvarelo" target="_blank"></Link>
-                            <Button variant="ghost" colorScheme="gray" leftIcon={<Icon as={IoLogoGithub} />}>@alexvarelo</Button>
+                            <Link href="https://github.com/alexvarelo" target="_blank">
+                                <Button variant="ghost" colorScheme="gray" leftIcon={<Icon as={IoLogoGithub} />}>@alexvarelo</Button>
+                            </Link>
                         </ListItem>
                     </List>
                     <List>
                         <ListItem>
-                            <Link href="https://www.instagram.com/alexvarelo.raw/" target="_blank"></Link>
-                            <Button variant="ghost" colorScheme="purple" leftIcon={<Icon as={IoLogoInstagram} />}>@alexvarelo.raw</Button>
+                            <Link href="https://www.instagram.com/alexvarelo.raw/" target="_blank">
+                                <Button variant="ghost" colorScheme="purple" leftIcon={<Icon as={IoLogoInstagram} />}>@alexvarelo.raw</Button>
+                            </Link>
                         </ListItem>
                     </List>
                     <List>
                         <ListItem>
-                            <Link href="https://twitter.com/Alexvarelo" target="_blank"></Link>
-                            <Button variant="ghost" colorScheme="cyan" leftIcon={<Icon as={IoLogoTwitter} />}>@alexvarelo</Button>
+                            <Link href="https://twitter.com/Alexvarelo" target="_blank">
+                                <Button variant="ghost" colorScheme="cyan" leftIcon={<Icon as={IoLogoTwitter} />}>@alexvarelo</Button>
+                            </Link>
                         </ListItem>
                     </List>
                 </Section>

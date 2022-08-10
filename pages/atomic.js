@@ -10,6 +10,7 @@ import {
     PopoverArrow,
     PopoverCloseButton,
     PopoverHeader,
+    Image,
     PopoverBody,
     Stack
 } from '@chakra-ui/react'
@@ -22,7 +23,7 @@ import thumbGarda from '../public/atomico/garda/thumbnail.jpg';
 import thumbCinque from '../public/atomico/cinque/thumbnail.jpg';
 import thumbAsturias from '../public/atomico/asturias/thumbnail.png';
 import thumbJournal from '../public/atomico/journal/thumbnail.jpg';
-
+import prueba from '../public/atomico/cinque/landing.jpg';
 
 const Atomic = () => {
     return (
@@ -36,6 +37,7 @@ const Atomic = () => {
                 the products/photos that I made in order to revive an experience with my most special person in earth.
             </P>
 
+            <Image src={thumbAsturias} alt="aa"></Image>
             <Heading as="h4" fontSize={20} mb={8} mt={10}>
                 Main things Atomic stands for
             </Heading>
@@ -65,6 +67,11 @@ const Atomic = () => {
                 </Section>
                 <Section>
                     <AtomicGridItem id="asturias" title="Asturias" thumbnail={thumbAsturias} year="2021">
+                        Asturias the new north
+                    </AtomicGridItem>
+                </Section>
+                <Section>
+                    <AtomicGridItem id="asturias2" title="Asturias" thumbnail={prueba} year="2021">
                         Asturias the new north
                     </AtomicGridItem>
                 </Section>
