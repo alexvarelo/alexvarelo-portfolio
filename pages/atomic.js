@@ -30,14 +30,12 @@ const Atomic = () => {
         <Container maxW="750px">
             <Heading as="h3" fontSize={30} mb={4} mt={8}>Atomic</Heading>
 
-            <P>You may be wondering, what is Atomic? Is a brand? Is an idea? what is Atomic to me? Well, to be honest, at the moment
+            <P>You may be wondering, what is Atomic? Is it a brand? Is an idea? what is Atomic to me? Well, at the moment
                 is an unique thing and also englobes some ideas and prototypes. This idea came with my girlfriend, because usually call us
                 things that represents small concepts, so we started calling us atomic, that is a single irreducible unit aka the tiniest thing ever.
                 So then, I made a hoodie with this Atomic idea, and then a tshirt, and then a mirror, and then a journal, photos... so Atomic basically are
                 the products/photos that I made in order to revive an experience with my most special person in earth.
             </P>
-
-            <Image src={thumbAsturias} alt="aa"></Image>
             <Heading as="h4" fontSize={20} mb={8} mt={10}>
                 Main things Atomic stands for
             </Heading>

@@ -2,6 +2,7 @@ import Head from "next/head"
 import NavBar from '../navbar.js'
 import NoSsr from "../no-ssr.js"
 import { Box, Container } from "@chakra-ui/react"
+import Footer from '../footer'
 import VoxelDog from "../voxel-cat.js"
 
 const Main = ({ children, router }) => {
@@ -19,6 +20,7 @@ const Main = ({ children, router }) => {
                 </NoSsr> */}
             </Container>
             {children}
+            <Footer />
         </Box>
     )
 }
