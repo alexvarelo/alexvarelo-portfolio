@@ -44,8 +44,9 @@ const Page = () => {
                 <Box borderRadius="lg" bg={useColorModeValue('#F9F9F9', 'whiteAlpha.200')} p={1} mb={6} align="center">
                     {/*  Hi 👋🏼, I&apos;m a <GradientText>full-stack developer </GradientText> based in Spain! */}
                     <Image
-                        src="/logos/prueba.png"
-                        alt="companies" />
+                        src={useColorModeValue("/logos/logos_blac.png", "/logos/logos_white.png")}
+                        alt="companies"
+                        boxSize={"75%"} />
                 </Box>
                 <Box display={{ md: "flex" }}>
                     <Box flexGrow={1}>

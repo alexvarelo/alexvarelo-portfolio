@@ -30,7 +30,7 @@ const Logo = () => {
                     <Image src={sunFlowerImg} width={24} height={24} alt="logo"></Image>
                     <Text
                         color={useColorModeValue('gray.800', 'whiteAlpha.900')}
-                        fontFamily="'Trebuchet MS', sans-serif"
+                        //fontFamily="Gill Sans Extrabold, Helvetica, sans-serif"
                         fontWeight="bold"
                         ml={3} >
                         Alexvarelo
