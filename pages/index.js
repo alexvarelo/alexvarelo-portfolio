@@ -11,6 +11,7 @@ import {
 import dynamic from "next/dynamic"
 import GradientText from "../components/gradient.js"
 import styled from '@emotion/styled'
+import { Biography } from "../components/content/biography.js"
 
 const WorldMap = dynamic(import('react-svg-worldmap'), { ssr: false })
 
@@ -38,6 +39,7 @@ const LogoBox = styled.span`
 
 
 const Page = () => {
+    const yearsBiography=["2016","2017","2018","2019","2020", "2021","2022"];
     return (
         <Layout>
             <Container maxW="750px">
@@ -82,7 +84,15 @@ const Page = () => {
 
                 <Section delay={0.2}>
                     <Heading mt={12} as="h3" variant="section-title">Biography 📅</Heading>
-                    <BioSection>
+
+                    {yearsBiography.map((value, index) => (
+                        <BioSection key={index}>
+                            <BioYear>{value}</BioYear>
+                            <br /> 
+                            {Biography['year'+value]}
+                        </BioSection>
+                    ))}
+                    {/* <BioSection>
                         <BioYear>2016</BioYear>
                         Finished my school and decided that I wanted to dedicate myself in the world of IT.
                     </BioSection>
@@ -109,7 +119,7 @@ const Page = () => {
                             2022 to Present
                         </BioYear>
                         Ended my work in Minsait, and moved forwards to FNZ in Check Republic
-                    </BioSection>
+                    </BioSection> */}
                 </Section>
 
                 {/* <Section delay={0.3}>
