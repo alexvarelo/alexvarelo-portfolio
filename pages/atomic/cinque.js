@@ -7,16 +7,6 @@ function importAll(r) {
     return r.keys().map(r);
 }
 
-/* 
-
-const listOfImages = importAll(require.context('../../public/atomico/cinque/', false, /\.(png|jpe?g|svg)$/));
-
-{listOfImages.map(
-    (image, index) => 
-    <Image key={index} src={image} alt="info"></Image>  
-)} */
-
-
 /* const Cinque = () => {
     return (
         <Layout title="Cinque">
@@ -65,11 +55,10 @@ const Cinque = () => {
             id={"Cinque"}
             title={CinqueContent.title}
             subtitle={CinqueContent.subtitle}
-            description={CinqueContent.subtitle}
+            description={CinqueContent.description1}
             srcImages={importAll(require.context("../../public/atomico/cinque/", false, /\.(png|jpe?g|svg)$/))}
             landing={Landing}
             tag={CinqueContent.tag}>
-            {CinqueContent.description1}
         </AtomicSection>
     )
 }

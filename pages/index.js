@@ -92,34 +92,6 @@ const Page = () => {
                             {Biography['year'+value]}
                         </BioSection>
                     ))}
-                    {/* <BioSection>
-                        <BioYear>2016</BioYear>
-                        Finished my school and decided that I wanted to dedicate myself in the world of IT.
-                    </BioSection>
-                    <BioSection>
-                        <BioYear>
-                            2020
-                        </BioYear>
-                        Finished the Computer Science degree studied in the Universidad Complutense de Madrid
-                    </BioSection>
-                    <BioSection>
-                        <BioYear>
-                            2020
-                        </BioYear>
-                        Finished the Erasmus schoolarship in the Politencico di Milano, studing Master subjects being a grade student
-                    </BioSection>
-                    <BioSection>
-                        <BioYear>
-                            2021
-                        </BioYear>
-                        Worked for Minsait as a Data Scientist and ended the year learning React, and working as Front-end Developer
-                    </BioSection>
-                    <BioSection>
-                        <BioYear>
-                            2022 to Present
-                        </BioYear>
-                        Ended my work in Minsait, and moved forwards to FNZ in Check Republic
-                    </BioSection> */}
                 </Section>
 
                 {/* <Section delay={0.3}>
@@ -158,7 +130,7 @@ const Page = () => {
                 </Section>
                 <Section delay={0.3}>
                     <Heading mt={12} as="h3" variant="section-title">
-                        Places of Alex 🌍
+                        Alex&apos;s places 🌍
                     </Heading>
                     <WorldMap
                         fill="gray"

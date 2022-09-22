@@ -1,10 +1,10 @@
 import Layout from "../components/layouts/article"
-import { Container, Heading, HStack, Grid, Text, Badge, SimpleGrid, GridItem } from "@chakra-ui/react"
+import { Container, Heading, Text, Badge, SimpleGrid, GridItem } from "@chakra-ui/react"
 import Image from 'next/image'
 import Section from '../components/section.js'
 
 
-const AtomicSection = ({ children, id, title, subtitle, tag, description, srcImages, landing }) => {    
+const AtomicSection = ({ id, title, subtitle, tag, description, srcImages, landing }) => {    
     console.log(srcImages);  
     return (
         <Layout title={id}>
@@ -22,7 +22,7 @@ const AtomicSection = ({ children, id, title, subtitle, tag, description, srcIma
                 <Section delay={0.3}>
                     <SimpleGrid columns={[1, 2, 2]} mt="100px" alignItems={"center"}>
                         <Container centerContent={true}>
-                            {children}
+                            {description}
                         </Container>
                         <Container display="flex" justifyContent="flex-end" p={0}>
                             <SimpleGrid columns={[1, 4, 4]} gap={4}>

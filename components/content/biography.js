@@ -1,5 +1,5 @@
 export const Biography = {
-    year2016: "✅ Finished my school and decided that I wanted to dedicate myself in the world of IT.",
+    year2016: "✅ Finished my school and decided I wanted to dedicate myself in the world of IT",
     year2017: "Learned the fundamentals of programation, starting with C++, C, and base code",
     year2018: "Learned more advance skills in the IT world, deciding I wanted to focus in the computational field 💻, specifically in IA, algorithms and machine learning",
     year2019: "Feel stuck in routine, and wanted to go out and live a new experience in a international university, as it is the Politecnico di Milano.",
