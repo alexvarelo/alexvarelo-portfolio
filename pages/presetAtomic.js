@@ -5,7 +5,6 @@ import Section from '../components/section.js'
 
 
 const AtomicSection = ({ id, title, subtitle, tag, description, srcImages, landing }) => {    
-    console.log(srcImages);  
     return (
         <Layout title={id}>
             <Container maxW="90%" mt={"20px"}>
@@ -26,7 +25,7 @@ const AtomicSection = ({ id, title, subtitle, tag, description, srcImages, landi
                         </Container>
                         <Container display="flex" justifyContent="flex-end" p={0}>
                             <SimpleGrid columns={[1, 4, 4]} gap={4}>
-                                {srcImages.slice(0,2).map((image, index) => (
+                                {srcImages?.slice(0,2).map((image, index) => (
                                     <GridItem key={index} colSpan={2}>
                                         <Image placeholder="blur" src={image} key={index} width={200} height={300} alt="index" />
                                     </GridItem>

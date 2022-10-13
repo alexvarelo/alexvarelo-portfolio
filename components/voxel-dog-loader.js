@@ -1,4 +1,4 @@
-import { forwardRef } from 'react'
+/* import { forwardRef } from 'react'
 import { Box, Spinner } from '@chakra-ui/react'
 
 export const DogSpinner = () => (
@@ -35,4 +35,4 @@ const Loader = () => {
   )
 }
 
-export default Loader
+export default Loader */
