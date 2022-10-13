@@ -70,10 +70,11 @@ const Page = () => {
 
                 <Section delay={0.1}>
                     <Box mr={3} mt={7}>
-                        <Paragraph>Data Scientist who has open his barriers of knowledge to the field of front.
-                            Currently I&apos;m performing in a front-end project learning important skills,
-                            while strengthen and expanding my knowledge in machine learning by realizing the
-                            professional machine learning course of Google, using Google Cloud Platform.</Paragraph>
+                        <Paragraph>
+                            Software developer engineer, who started his career as a Data Scientist, and 
+                            has open his barriers of knowledge to the field of front-end technologies.
+                            Passionate of photography. Currently starting to use a FujiFilm XS-10.
+                            </Paragraph>
                     </Box>
                     {/* <Box align="center" my={4}>
                         <NextLink href="/works">

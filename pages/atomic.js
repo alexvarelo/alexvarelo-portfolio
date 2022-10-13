@@ -19,11 +19,9 @@ import { AtomicGridItem } from '../components/grid-item'
 import P from '../components/paragraph'
 import G from '../components/gradient'
 
-import thumbGarda from '../public/atomico/garda/thumbnail.jpg';
 import thumbCinque from '../public/atomico/cinque/thumbnail.jpg';
 import thumbAsturias from '../public/atomico/asturias/thumbnail.png';
 import thumbJournal from '../public/atomico/journal/thumbnail.jpg';
-import prueba from '../public/atomico/cinque/landing.jpg';
 
 const Atomic = () => {
     return (
@@ -65,11 +63,6 @@ const Atomic = () => {
                 </Section>
                 <Section>
                     <AtomicGridItem id="asturias" title="Asturias" thumbnail={thumbAsturias} year="2021">
-                        Asturias the new north
-                    </AtomicGridItem>
-                </Section>
-                <Section>
-                    <AtomicGridItem id="asturias2" title="Asturias" thumbnail={prueba} year="2021">
                         Asturias the new north
                     </AtomicGridItem>
                 </Section>
