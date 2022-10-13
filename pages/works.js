@@ -2,7 +2,7 @@ import {Container, Heading, SimpleGrid} from '@chakra-ui/react'
 import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-item'
 
-import thumbGlucNet from '../public/images/glucnet.png'
+import thumbGlucNet from '../public/images/glucnet.PNG'
 import thumbJustice from '../public/images/justice.png'
 
 const Works = () => {

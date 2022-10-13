@@ -18,7 +18,7 @@ import P from '../components/paragraph'
 import G from '../components/gradient'
 
 import thumbCinque from '../public/atomico/cinque/thumbnail.jpg';
-import thumbAsturias from '../public/atomico/asturias/thumbnail.png';
+import thumbAsturias from '../public/atomico/asturias/thumbnail.PNG';
 import thumbJournal from '../public/atomico/journal/thumbnail.jpg';
 
 const Atomic = () => {
