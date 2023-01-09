@@ -24,7 +24,7 @@ function AtomicSection({
 }) {
   const [originalSize, setOriginalSize] = useState(true);
   return (
-    <Layout title={id}> 
+    <Layout title={id}>
       <Container maxW="90%" mt={"20px"} pt={28}>
         <SimpleGrid columns={[1, 1, 3]} alignItems="center" gap={12}>
           <GridItem colSpan={1} ml={30} alignItems="center">
@@ -43,9 +43,10 @@ function AtomicSection({
             />
           </GridItem>
         </SimpleGrid>
+        <p>{description}</p>
         <Section delay={0.3}>
           <Button mt={10} onClick={() => setOriginalSize(!originalSize)}>
-            {originalSize ?  "Adapted size" : "Original size"}
+            {originalSize ? "Adapted size" : "Original size"}
           </Button>
           <SimpleGrid
             columns={[1, 2, 2, 4]}
