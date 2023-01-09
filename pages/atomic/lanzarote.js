@@ -1,7 +1,7 @@
 import AtomicSection from "../presetAtomic.js";
 import { LanzaroteContent } from "../../components/content/atomico.js";
 
-import Landing from "../../public/atomico/Lanzarote/landingLanzarote.jpg";
+import Landing from "../../public/atomico/lanzarote/landingLanzarote.JPG";
 
 function importAll(r) {
   let files = [];

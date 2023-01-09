@@ -20,7 +20,7 @@ import {GradientTextBlue} from "../components/gradient";
 import thumbCinque from "../public/atomico/cinque/thumbnailCinque.jpg";
 import thumbAsturias from "../public/atomico/asturias/thumbnailAsturias.PNG";
 import thumbJournal from "../public/atomico/journal/thumbnailJournal.jpg";
-import thumbLanzarote from "../public/atomico/lanzarote/thumbnailLanzarote.jpg";
+import thumbLanzarote from "../public/atomico/lanzarote/thumbnailLanzarote.JPG";
 
 const Atomic = () => {
   return (
