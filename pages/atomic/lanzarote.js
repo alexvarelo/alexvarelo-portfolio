@@ -14,15 +14,14 @@ function importAll(r) {
 }
 
 const Lanzarote = () => {
-  const imageContext = "/atomico/Lanzarote/";
+  const imageContext = "/atomico/lanzarote/";
   let images = importAll(
     require.context(
-      "../../public/atomico/Lanzarote/",
+      "../../public/atomico/lanzarote/",
       false,
       /\.(png|jpe?g|svg|JPG|JPEG)$/
     )
   );
-  console.log("images without context", images);
   images = images.map((x) => imageContext + x);
   console.log(images);
   return (
@@ -34,9 +33,7 @@ const Lanzarote = () => {
       srcImages={images}
       landing={Landing}
       tag={LanzaroteContent.tag}
-    >
-      imageContext={"../../public/atomico/lanzarote/"}
-    </AtomicSection>
+    />
   );
 };
 
