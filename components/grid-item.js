@@ -39,8 +39,8 @@ export const AtomicGridItem = ({ children, id, title, thumbnail, year}) => (
     <Box w="100%" align="center">
         <NextLink href={`/atomic/${id}`}>
             <LinkBox cursor="pointer">
-                <Image width={230} height={380} src={thumbnail} alt={title} className="grid-item-thumbnail" placeholder='blur' />
-                <LinkOverlay href={`/atomic/${id}`}>
+                <Image width={230} height={380} src={thumbnail} alt={title} className="grid-item-thumbnail" blurDataURL placeholder='blur' />
+                <LinkOverlay href={`/atomic/${id}`}>    
                     <Text mt={1} fontSize={20} fontWeight="2px">
                         {title}
                     </Text>

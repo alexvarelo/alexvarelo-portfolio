@@ -1,7 +1,7 @@
 import AtomicSection from "../presetAtomic.js"
 import { CinqueContent } from "../../components/content/atomico.js"
 
-import Landing from '../../public/atomico/cinque/landing.jpg'
+import Landing from '../../public/atomico/cinque/landingCinque.jpg'
 
 function importAll(r) {
     return r.keys().map(r);
