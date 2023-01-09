@@ -35,7 +35,7 @@ const Lanzarote = () => {
       landing={Landing}
       tag={LanzaroteContent.tag}
     >
-      imageContext={"../../public/atomico/Lanzarote/"}
+      imageContext={"../../public/atomico/lanzarote/"}
     </AtomicSection>
   );
 };
