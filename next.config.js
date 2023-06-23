@@ -1,6 +1,6 @@
 module.exports = {
   images: {
-    domains: ["bit.ly"],
+    domains: ["dqbgmbtxdkeafyvhgrrn.supabase.co"],
   },
   reactStringMode: true,
   webpack: (config, { isServer }) => {

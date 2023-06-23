@@ -16,22 +16,22 @@ import Layout from "../components/layouts/article";
 import { BioSection, BioYear } from "../components/bio.js";
 import { IoLogoTwitter, IoLogoInstagram, IoLogoGithub } from "react-icons/io5";
 import dynamic from "next/dynamic";
-import {GradientTextBlue} from "../components/gradient.js";
+import { GradientTextBlue } from "../components/gradient.js";
 import styled from "@emotion/styled";
-import { Biography } from "../components/content/biography.js";
+import {BiographyInformation} from "../components/content/biography.js"
 
 const WorldMap = dynamic(import("react-svg-worldmap"), { ssr: false });
 
 const data = [
-  { country: "es", value: "He vivido" },
-  { country: "it", value: "a" },
-  { country: "be", value: "aa" },
-  { country: "cz", value: "a" },
-  { country: "po", value: "a" },
-  { country: "ch", value: "a" },
-  { country: "hu", value: "a" },
-  { country: "fr", value: "a" },
-  { country: "gb", value: "a" },
+  { country: "es", value: "" },
+  { country: "it", value: "" },
+  { country: "be", value: "" },
+  { country: "cz", value: "" },
+  { country: "po", value: "" },
+  { country: "ch", value: "" },
+  { country: "hu", value: "" },
+  { country: "fr", value: "" },
+  { country: "gb", value: "" },
 ];
 
 const LogoBox = styled.span`
@@ -44,18 +44,9 @@ const LogoBox = styled.span`
 `;
 
 const Page = () => {
-  const yearsBiography = [
-    "2016",
-    "2017",
-    "2018",
-    "2019",
-    "2020",
-    "2021",
-    "2022",
-  ];
   return (
     <Layout>
-      <Container maxW="850px" pt={20}>
+      <Container maxW="850px" pt={10}>
         <Box
           borderRadius="lg"
           bg={useColorModeValue("#F9F9F9", "whiteAlpha.200")}
@@ -63,7 +54,6 @@ const Page = () => {
           mb={6}
           align="center"
         >
-          {/*  Hi 👋🏼, I&apos;m a <GradientText>full-stack developer </GradientText> based in Spain! */}
           <Image
             src={useColorModeValue(
               "/logos/logos_blac.png",
@@ -79,8 +69,8 @@ const Page = () => {
               Welcome <LogoBox>👋🏼</LogoBox> <br /> I&apos;m Alejandro Varela!
             </Heading>
             <p>
-              <GradientTextBlue>Software developer</GradientTextBlue> (Front end / Data
-              Scientist / Photographer)
+              <GradientTextBlue>Software developer</GradientTextBlue> (Front End
+              / Data Scientist / Photographer)
             </p>
           </Box>
           <Box
@@ -110,11 +100,6 @@ const Page = () => {
               starting to use a FujiFilm XS-10.
             </Paragraph>
           </Box>
-          {/* <Box align="center" my={4}>
-                        <NextLink href="/works">
-                            <Button rightIcon={<ChevronRightIcon></ChevronRightIcon>} colorScheme="cyan">My portofolio</Button>
-                        </NextLink>
-                    </Box> */}
         </Section>
 
         <Section delay={0.2}>
@@ -122,22 +107,14 @@ const Page = () => {
             Biography 📅
           </Heading>
 
-          {yearsBiography.map((value, index) => (
-            <BioSection key={index}>
+          {Object.keys(BiographyInformation).map((value) => (
+            <BioSection key={value}>
               <BioYear>{value}</BioYear>
               <br />
-              {Biography["year" + value]}
+              {BiographyInformation[value]}
             </BioSection>
           ))}
         </Section>
-
-        {/* <Section delay={0.3}>
-                    <Heading mt={12} as="h3" variant="section-title">I ♡</Heading>
-                    <Paragraph>
-                        <Link href="/photography">Photography</Link>
-                        , Music, Playing guitar, sport, organization, family, Padel
-                    </Paragraph>
-                </Section> */}
 
         <Section delay={0.3}>
           <Heading mt={12} as="h3" variant="section-title">

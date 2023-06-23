@@ -15,6 +15,7 @@ import {
   Button,
   HStack,
   useColorModeValue,
+  Text,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import ThemeToggleButton from "./theme-toggle-button.js";
@@ -41,9 +42,7 @@ function Header() {
       <Flex w="100%" px="6" py="5" align="center" justify="space-between">
         <Logo />
         <HStack as="nav" spacing="5">
-          <LinkItem href="/atomic">
-            Atomic
-          </LinkItem>
+          <LinkItem href="/atomic">Atomic</LinkItem>
         </HStack>
         <HStack>
           <Button>Test</Button>
@@ -63,12 +62,13 @@ const NavBar = (props) => {
       w="100%"
       /* bg={useColorModeValue('#ffffff40', '#20202380')} */
       zIndex={2}
+      mt={5}
       {...props}
     >
       <Container
         display="flex"
         p={2}
-        maxW={{ sm: '100%', lg: '70%' }}
+        maxW={{ sm: "100%", lg: "70%" }}
         wrap="wrap"
         align="center"
         justify="space=between"
@@ -90,7 +90,7 @@ const NavBar = (props) => {
           {/* <LinkItem href="/works" path={path}>Works</LinkItem>
                     <LinkItem href="/posts" path={path}>Posts</LinkItem> */}
           <LinkItem href="/atomic" path={path}>
-            Atomic
+            <Text fontSize="20">Atomic</Text>
           </LinkItem>
         </Stack>
         <Box flex={1} align="right">

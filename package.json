@@ -19,6 +19,7 @@
     "@emotion/styled": "^11.8.1",
     "@fontsource/open-sans": "^4.5.11",
     "@fontsource/raleway": "^4.5.10",
+    "@supabase/supabase-js": "^2.4.0",
     "brfs": "^2.0.2",
     "framer-motion": "^6.3.10",
     "fs": "0.0.1-security",

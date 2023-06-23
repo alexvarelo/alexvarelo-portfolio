@@ -8,10 +8,12 @@ import {
   SimpleGrid,
   GridItem,
   Button,
+  Icon,
 } from "@chakra-ui/react";
-//import {Image as ImageChakra} from "@chakra-ui/react";
-import Image from "next/image";
 import Section from "../components/section.js";
+import BlurImage from "../components/BlurImage";
+import { IoResize } from "react-icons/io5";
+import { TbResize } from "react-icons/tb";
 
 function AtomicSection({
   id,
@@ -25,49 +27,53 @@ function AtomicSection({
   const [originalSize, setOriginalSize] = useState(true);
   return (
     <Layout title={id}>
-      <Container maxW="90%" mt={"20px"} pt={28}>
+      <Container maxW={["100%", "90%"]} mt="20">
         <SimpleGrid columns={[1, 1, 3]} alignItems="center" gap={12}>
           <GridItem colSpan={1} ml={30} alignItems="center">
-            <Heading fontSize={30} as="h2" variant="page-title">
+            <Heading fontSize={[30, 20, 25, 30, 33, 35]} as="h2" variant="page-title">
               {title}
             </Heading>
-            <Text pt={1}>{subtitle}</Text>
+            <Text pt={1} ml="1" as="i">
+              {subtitle}
+            </Text>
+            <br />
             <Badge>{tag}</Badge>
+            <Text mt={5} fontSize={[13, 20, 10, 10, 13, 15]}>
+              {description}
+            </Text>
           </GridItem>
-          <GridItem colSpan={2}>
-            <Image
-              objectFit="scale-down"
-              placeholder="blur"
-              src={landing}
-              alt="prueba"
-            />
+          <GridItem
+            colSpan={2}
+            h={[300, 300, 400, 400, 400, 400, 400]}
+            position={"relative"}
+          >
+            <BlurImage img={landing} originalSize={false} />
           </GridItem>
         </SimpleGrid>
-        <p>{description}</p>
         <Section delay={0.3}>
-          <Button mt={10} onClick={() => setOriginalSize(!originalSize)}>
+          <Button
+            fontSize={20}
+            ml="5"
+            leftIcon={<Icon as={originalSize ? TbResize : IoResize} />}
+            mt={4}
+            onClick={() => setOriginalSize(!originalSize)}
+          >
             {originalSize ? "Adapted size" : "Original size"}
           </Button>
           <SimpleGrid
-            columns={[1, 2, 2, 4]}
             mt={"40px"}
             spacingX="20px"
-            spacingY="35px"
+            spacingY="20px"
+            /* minChildWidth={["150px", "200px", "300px", "400px", "500px"]} */
+            columns={{ base: 1, md: 2, md: 3 }}
           >
-            {srcImages?.map((image, index) => (
-              <GridItem key={image}>
-                <Image
-                  objectFit={originalSize ? "scale-down" : "cover"}
-                  src={image}
-                  key={image}
-                  blurDataURL="https://bit.ly/placeholder-img"
-                  placeholder="blur"
-                  /* key={index} */
-                  alt={index}
-                  height={1000}
-                  width={730}
-                  loading="lazy"
-                />
+            {srcImages?.map((image) => (
+              <GridItem
+                key={image}
+                position={"relative"}
+                h={"700px"}
+              >
+                <BlurImage img={image} originalSize={originalSize} />
               </GridItem>
             ))}
           </SimpleGrid>

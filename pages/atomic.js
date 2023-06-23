@@ -1,54 +1,93 @@
-import {
-  Container,
-  SimpleGrid,
-  Button,
-  Heading,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverArrow,
-  PopoverCloseButton,
-  PopoverHeader,
-  PopoverBody,
-  Stack,
-} from "@chakra-ui/react";
+import { Container, SimpleGrid, Heading, GridItem } from "@chakra-ui/react";
 import Section from "../components/section";
 import { AtomicGridItem } from "../components/grid-item";
 import P from "../components/paragraph";
-import {GradientTextBlue} from "../components/gradient";
+import { GradientTextBlue } from "../components/gradient";
+import BlurImage from "../components/BlurImage";
 
 import thumbCinque from "../public/atomico/cinque/thumbnailCinque.jpg";
 import thumbAsturias from "../public/atomico/asturias/thumbnailAsturias.PNG";
 import thumbJournal from "../public/atomico/journal/thumbnailJournal.jpg";
 import thumbLanzarote from "../public/atomico/lanzarote/thumbnailLanzarote.JPG";
+import { useEffect, useState, useRef } from "react";
+import { supabase } from "../lib/supabaseClient.js";
 
 const Atomic = () => {
+  const landingImages = useRef();
+  const [landingImage, setLandingImage] = useState("");
+  const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLandingImage(landingImages.current[counter].href);
+      console.log(landingImage);
+      if (counter === landingImages.current.length - 1) {
+        setCounter(0);
+      } else {
+        setCounter(counter + 1);
+      }
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, [counter]);
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      const images = await supabase
+        .from("AtomicImages")
+        .select()
+        .eq("forLandingPage", true);
+      landingImages.current = images.data;
+      setLandingImage(images.data[0].href);
+    };
+    if (!landingImages.current) {
+      fetchImages();
+    }
+  }, []);
+
+  if (!landingImages.current) {
+    return <></>;
+  }
   return (
     <>
-      <div className="main">
-        <video src="/atomico/landing/wave.mp4" autoPlay loop muted />
-        <div className="atomicTitle">
-          <Heading as="h1" fontSize={60} fontFamily={"body"}>
-            <GradientTextBlue>Atomico</GradientTextBlue>
+      <Container align="center" maxW={["100%", "90%"]} mt="20">
+        <SimpleGrid columns={[1, 1, 3]} alignItems="center" gap={10}>
+          <GridItem colSpan={1}>
+            <Heading as="h1" fontSize={60} fontFamily={"body"}>
+              <GradientTextBlue>ATOMIC</GradientTextBlue>
+            </Heading>
+            <Heading as="h1" fontSize={50} fontFamily={"body"}>
+              <GradientTextBlue>TRAVEL</GradientTextBlue>
+            </Heading>
+            <Heading as="h1" fontSize={40} fontFamily={"body"}>
+              <GradientTextBlue>LOVE</GradientTextBlue>
+            </Heading>
+            <Heading as="h1" fontSize={30} fontFamily={"body"}>
+              <GradientTextBlue>LIFE</GradientTextBlue>
+            </Heading>
+          </GridItem>
+          <GridItem
+            colSpan={[1, 2]}
+            alignItems="center"
+            h={500}
+            position={"relative"}
+          >
+            <BlurImage img={landingImage} originalSize={false} />
+          </GridItem>
+        </SimpleGrid>
+      </Container>
+      <Container maxW="90%" mt={15}>
+        <Section>
+          <Heading as="h2" fontSize={25} mb={8} mt={12}>
+            Recent posts from <GradientTextBlue>Atomico</GradientTextBlue>
           </Heading>
-          <Heading as="h4" fontSize={25} fontFamily={"initial"}>
-          Del átomo o relacionado con él.
-        </Heading>
-          <p fontFamily={"initial"}>Pues eso, lo que te he dicho.</p>
-        </div>
-      </div>
-      <Container maxW="750px">
-        {/* <iframe
-        width="560"
-        height="315"
-        title=""
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        loop="1"
-        data-cookieconsent="marketing"
-        style="display: block;"
-        src="/atomico/landing/wave.mp4"
-      ></iframe> */}
+
+          <SimpleGrid columns={[1, 2, 4]} gap={3}>
+            <AtomicGridItem id="journal" thumbnail={thumbJournal} />
+            <AtomicGridItem id="cinque" thumbnail={thumbCinque} />
+            <AtomicGridItem id="asturias" thumbnail={thumbAsturias} />
+            <AtomicGridItem id="lanzarote" thumbnail={thumbLanzarote} />
+          </SimpleGrid>
+        </Section>
         <Heading as="h3" fontSize={30} mb={4} mt={8}>
           Atomic
         </Heading>
@@ -64,107 +103,8 @@ const Atomic = () => {
           Atomic basically are the products/photos that I made in order to
           revive an experience with my most special person in earth.
         </P>
-        <Heading as="h4" fontSize={20} mb={8} mt={10}>
-          Main things Atomic stands for
-        </Heading>
-
-        <Stack direction="row" spacing={7} placeContent="center">
-          <PopoverTags
-            heading="Clothes"
-            text="In Atomic we have made some different clothes"
-            color="green"
-          ></PopoverTags>
-          <PopoverTags
-            heading="Photos"
-            text="Each experience is always matching with a photo coverage"
-            color="blue"
-          ></PopoverTags>
-          <PopoverTags
-            heading="Journal"
-            text="For each essential memory, we have a front page journal. Also written my first Atomic journal"
-            color="pink"
-          ></PopoverTags>
-          <PopoverTags
-            heading="Experiences"
-            text="Narrative of different experiences"
-            color="orange"
-          ></PopoverTags>
-          <PopoverTags
-            heading="Trips"
-            text="In here we travel, a lot"
-            color="purple"
-          ></PopoverTags>
-        </Stack>
-
-        <Heading as="h4" fontSize={20} mb={8} mt={12}>
-          Recent posts from <GradientTextBlue>Atomico</GradientTextBlue>
-        </Heading>
-
-        <SimpleGrid columns={[1, 2, 3]} gap={6}>
-          <Section>
-            <AtomicGridItem
-              id="journal"
-              title="Atomic Journal"
-              thumbnail={thumbJournal}
-              year="2020"
-            >
-              My first Journal
-            </AtomicGridItem>
-          </Section>
-          <Section>
-            <AtomicGridItem
-              id="cinque"
-              title="Cinque Terre"
-              thumbnail={thumbCinque}
-              year="2021"
-            >
-              7 days in Italy
-            </AtomicGridItem>
-          </Section>
-          <Section>
-            <AtomicGridItem
-              id="asturias"
-              title="Asturias"
-              thumbnail={thumbAsturias}
-              year="2021"
-            >
-              Asturias the new north
-            </AtomicGridItem>
-          </Section>
-          <Section>
-            <AtomicGridItem
-              id="lanzarote"
-              title="Lanzarote"
-              thumbnail={thumbLanzarote}
-              year="2022"
-            >
-              Asturias the new north
-            </AtomicGridItem>
-          </Section>
-          {/* <Section>
-                    <AtomicGridItem id="garda" title="Lago di Garda" thumbnail={thumbGarda} year="2020">
-                        Trip to Lago di Garda
-                    </AtomicGridItem>
-                </Section> */}
-        </SimpleGrid>
       </Container>
     </>
-  );
-};
-
-const PopoverTags = ({ heading, text, color }) => {
-  return (
-    <Popover>
-      <PopoverTrigger>
-        <Button colorScheme={color}>{heading}</Button>
-      </PopoverTrigger>
-      <PopoverContent>
-        <PopoverArrow />
-        <PopoverCloseButton />
-        <PopoverHeader>{heading}</PopoverHeader>
-        <PopoverBody>{text}</PopoverBody>
-      </PopoverContent>
-    </Popover>
   );
 };
 

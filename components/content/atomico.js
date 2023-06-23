@@ -15,6 +15,6 @@ export const AsturiasContent = {
 export const LanzaroteContent = {
     title: "Tierra del fuego",
     subtitle: "Lanzarote, 12/2022",
-    description1 : "...",
+    description1 : "En esta aventura nos adentramos por la isla de lanzarote para conocer la llamada tierra del fuego. Desde luego que nos ha dejado impresionados y es un sitio que deja huella",
     tag: "@Cristina.jpg"
 }

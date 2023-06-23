@@ -21,6 +21,7 @@ const ThemeToggleButton = () => {
                     icon={useColorModeValue(<MoonIcon />, <SunIcon />)}
                     onClick={toggleColorMode}
                     variant='outline'
+                    size={"md"}
                     isRound />
             </motion.div>
         </AnimatePresence>
