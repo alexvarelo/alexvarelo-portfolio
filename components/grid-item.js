@@ -5,8 +5,6 @@ import {
   Text,
   LinkBox,
   LinkOverlay,
-  Badge,
-  VStack,
 } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
 import BlurImage from "./BlurImage";
