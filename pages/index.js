@@ -15,14 +15,14 @@ import Paragraph from "../components/paragraph.js";
 import Layout from "../components/layouts/article";
 import { BioSection, BioYear } from "../components/bio.js";
 import { IoLogoTwitter, IoLogoInstagram, IoLogoGithub } from "react-icons/io5";
-import dynamic from "next/dynamic";
+/* import dynamic from "next/dynamic"; */
 import { GradientTextBlue } from "../components/gradient.js";
 import styled from "@emotion/styled";
 import {BiographyInformation} from "../components/content/biography.js"
 
-const WorldMap = dynamic(import("react-svg-worldmap"), { ssr: false });
+/* const WorldMap = dynamic(import("react-svg-worldmap"), { ssr: false }); */
 
-const data = [
+/* const data = [
   { country: "es", value: "" },
   { country: "it", value: "" },
   { country: "be", value: "" },
@@ -32,7 +32,7 @@ const data = [
   { country: "hu", value: "" },
   { country: "fr", value: "" },
   { country: "gb", value: "" },
-];
+]; */
 
 const LogoBox = styled.span`
   font-size: 35px;
@@ -167,7 +167,7 @@ const Page = () => {
           <Heading mt={12} as="h3" variant="section-title">
             Alex&apos;s places 🌍
           </Heading>
-          <WorldMap
+          {/* <WorldMap
             fill="gray"
             fillOpacity="1"
             color="#88ccca"
@@ -182,7 +182,7 @@ const Page = () => {
               "whiteAlpha.500",
               "whiteAlpha.200"
             )}
-          />
+          /> */}
         </Section>
       </Container>
     </Layout>
